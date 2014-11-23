@@ -1,0 +1,32 @@
+{
+	"name": "respinar/hikers",
+	"type": "project",
+	"description": "Contao Hikers management module",
+	"keywords":["contao", "hiker","member"],
+	"type": "contao-module",
+	"homepage":"https://github.com/respinar/hikers/",
+	"license": "LGPL-3.0+",
+	"authors": [
+		{
+			"name": "Hamid Abbaszadeh",
+			"email": "info@respinar.com",
+			"homepage": "http://respinar.com/",
+			"role":"Developer"
+		}
+	],
+	"support":{
+        	"issues":"https://github.com/respinar/hikers/issues"
+	},
+	"require": {
+		"php":">=5.3.2",
+		"contao/core":">=3.2,<=3.4",
+		"contao-community-alliance/composer-plugin":"2.*"
+	},
+	"extra": {
+		"contao": {
+			"sources": {
+				"": "system/modules/hikers"
+			}
+		}
+	}
+}
