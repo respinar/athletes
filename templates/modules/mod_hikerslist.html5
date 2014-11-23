@@ -1,0 +1,23 @@
+
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+  <?php if ($this->members): foreach ($this->members as $member): ?>
+  <div class="member g2">
+    <?php if ($member['photo']): ?><figure class="photo"><?php echo $member['photo']; ?></figure><?php endif; ?>
+
+    <?php if ($member['link']): ?>
+    <h3><a href="<?php echo $member['link']; ?>"><?php echo $member['name']; ?> <span class="family"><?php echo $member['family']; ?></span></a></h3>
+    <?php else: ?>
+    <h3><?php echo $member['name']; ?><span class="family"><?php echo $member['family']; ?></span></h3>
+    <?php endif; ?>
+
+    <p class="info"><?php echo $member['post']; ?> </p>
+
+  </div>
+  <?php endforeach; endif; ?>
+
+</div>
