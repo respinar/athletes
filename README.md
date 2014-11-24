@@ -1,6 +1,4 @@
-cd_collection
+Hikers
 =============
 
-This extension is a part of the "Create a custom module" tutorial at [qzminski Blog](http://blog.qzminski.com).
-
-The icon used in the project is made by [FamFamFam](http://famfamfam.com).
+[![Latest Stable Version](https://poser.pugx.org/respinar/hikers/v/stable.svg)](https://packagist.org/packages/respinar/hikers) [![Total Downloads](https://poser.pugx.org/respinar/hikers/downloads.svg)](https://packagist.org/packages/respinar/hikers) [![Latest Unstable Version](https://poser.pugx.org/respinar/hikers/v/unstable.svg)](https://packagist.org/packages/respinar/hikers) [![License](https://poser.pugx.org/respinar/hikers/license.svg)](https://packagist.org/packages/respinar/hikers)
