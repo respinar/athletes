@@ -3,12 +3,22 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2014 Leo Feyer
  *
- * @package Hikers
+ * @package Athletes
  * @link    https://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
+
+
+/**
+ * Register the namespaces
+ */
+ClassLoader::addNamespaces(array
+(
+	'athletes',
+));
+
 
 /**
  * Register the classes
@@ -16,16 +26,16 @@
 ClassLoader::addClasses(array
 (
 	// Classes
-	'Contao\Hikers'            => 'system/modules/hikers/classes/Hikers.php',
+	'Contao\Athletes'             => 'system/modules/athletes/classes/Athletes.php',
 
 	// Models
-	//'Contao\HikersGroupModel'  => 'system/modules/hikers/models/HikersGroupModel.php',
-	//'Contao\HikersModel'       => 'system/modules/hikers/models/HikersModel.php',
-	//'Contao\HikersActsModel'   => 'system/modules/hikers/models/HikersActsModel.php',
+	'athletes\AthletesModel'        => 'system/modules/athletes/models/AthletesModel.php',
+	'athletes\AthletesGroupModel'   => 'system/modules/athletes/models/AthletesGroupModel.php',
+	'athletes\AthletesActModel'     => 'system/modules/athletes/models/AthletesActModel.php',
 
 	// Modules
-	'Contao\ModuleHikersList'   => 'system/modules/hikers/modules/ModuleHikersList.php',
-	'Contao\ModuleHikersReader' => 'system/modules/hikers/modules/ModuleHikersReader.php'
+	'athletes\ModuleAthletesReader' => 'system/modules/athletes/modules/ModuleAthletesReader.php',
+	'athletes\ModuleAthletesList'   => 'system/modules/athletes/modules/ModuleAthletesList.php',
 ));
 
 
@@ -34,6 +44,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_hikerslist'   => 'system/modules/hikers/templates/modules',
-	'mod_hikersreader' => 'system/modules/hikers/templates/modules'
+	'mod_athletesreader' => 'system/modules/athletes/templates/modules',
+	'mod_athleteslist'   => 'system/modules/athletes/templates/modules',
 ));

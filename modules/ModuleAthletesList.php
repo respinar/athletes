@@ -1,21 +1,21 @@
 <?php
 
-namespace Contao;
+namespace athletes;
 
 /**
- * Class ModuleHikersList
+ * Class ModuleAthletesList
  *
- * Front end module "hikers list".
+ * Front end module "athletes list".
  */
 
-class ModuleHikersList extends \Module
+class ModuleAthletesList extends \Module
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_hikerslist';
+	protected $strTemplate = 'mod_athleteslist';
 
 
 	/**
@@ -47,9 +47,9 @@ class ModuleHikersList extends \Module
 	protected function compile()
 	{
 
-		$intList = $this->hikers_group;
+		$intList = $this->athletes_group;
 
-		$objMembers = $this->Database->prepare("SELECT * FROM tl_hikers WHERE published=1 AND pid=? ORDER BY sorting")->execute($intList);
+		$objMembers = $this->Database->prepare("SELECT * FROM tl_athletes WHERE published=1 AND pid=? ORDER BY sorting")->execute($intList);
 
 		//$objMembers = \MembersModel;
 

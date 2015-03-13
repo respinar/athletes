@@ -14,7 +14,7 @@
 /**
  * Run in a custom namespace, so the class can be replaced
  */
-namespace Contao;
+namespace athletes;
 
 
 /**
@@ -25,7 +25,7 @@ namespace Contao;
  * @author     Hamid Abbaszadeh <http://respinar.com>
  * @package    Members
  */
-class Hikers extends \Frontend
+class Athletes extends \Frontend
 {
 
 	/**

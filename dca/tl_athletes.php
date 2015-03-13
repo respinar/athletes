@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Table tl_hikers
+ * Table tl_athletes
  */
-$GLOBALS['TL_DCA']['tl_hikers'] = array
+$GLOBALS['TL_DCA']['tl_athletes'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ptable'                      => 'tl_hikers_group',
-		'ctable'                      => array('tl_hikers_act'),
+		'ptable'                      => 'tl_athletes_group',
+		'ctable'                      => array('tl_athletes_act'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -32,13 +32,13 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 			'fields'                  => array('sorting'),
 			'headerFields'            => array('title'),
 			'panelLayout'             => 'search,limit',
-			'child_record_callback'   => array('tl_hikers', 'generateActRow')
+			'child_record_callback'   => array('tl_athletes', 'generateActRow')
 		),
 		//'label' => array
 		//(
 			//'fields'                  => array('name','family', 'post'),
 			//'format'                  => '%s %s <span style="color:#b3b3b3;padding-left:3px;">[%s]</span>',
-			//'label_callback'          => array('tl_hikers', 'addPhoto')
+			//'label_callback'          => array('tl_athletes', 'addPhoto')
 		//),
 		'global_operations' => array
 		(
@@ -54,39 +54,39 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['edit'],
-				'href'                => 'table=tl_hikers_act',
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['edit'],
+				'href'                => 'table=tl_athletes_act',
 				'icon'                => 'edit.gif'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['toggle'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('tl_hikers', 'toggleIcon')
+				'button_callback'     => array('tl_athletes', 'toggleIcon')
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -127,7 +127,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'name' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['name'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['name'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -136,7 +136,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'family' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['family'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['family'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -145,7 +145,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'alias' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['alias'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['alias'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -154,7 +154,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'post' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['post'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['post'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'joined' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['joined'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['joined'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
@@ -172,7 +172,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'certs' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['certs'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['certs'],
 			'exclude'                 => true,
 			'filter'                  => flase,
 			'inputType'               => 'listWizard',
@@ -181,7 +181,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'photo' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['photo'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['photo'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
@@ -189,7 +189,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'certImage' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['certImage'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['certImage'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true),
@@ -197,7 +197,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'multiSRC' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['multiSRC'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['multiSRC'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('multiple'=>true, 'fieldType'=>'checkbox', 'orderField'=>'orderSRC', 'files'=>true, 'mandatory'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
@@ -205,12 +205,12 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'orderSRC' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['orderSRC'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['orderSRC'],
 			'sql'                     => "blob NULL"
 		),
 		'description' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['description'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'textarea',
@@ -219,7 +219,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 		),
 		'published' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers']['published'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['published'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'flag'                    => 1,
@@ -230,7 +230,7 @@ $GLOBALS['TL_DCA']['tl_hikers'] = array
 	)
 );
 
-class tl_hikers extends Backend {
+class tl_athletes extends Backend {
 
 
 	public function generateActRow($arrRow)
@@ -285,12 +285,12 @@ class tl_hikers extends Backend {
 		//	$this->redirect('contao/main.php?act=error');
 		//}
 
-		$this->createInitialVersion('tl_hikers', $intId);
+		$this->createInitialVersion('tl_athletes', $intId);
 
 		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_hikers']['fields']['published']['save_callback']))
+		if (is_array($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback']))
 		{
-			foreach ($GLOBALS['TL_DCA']['tl_hikers']['fields']['published']['save_callback'] as $callback)
+			foreach ($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback'] as $callback)
 			{
 				$this->import($callback[0]);
 				$blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
@@ -298,10 +298,10 @@ class tl_hikers extends Backend {
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_hikers SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_athletes SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$this->createNewVersion('tl_hikers', $intId);
+		$this->createNewVersion('tl_athletes', $intId);
 
 	}
 

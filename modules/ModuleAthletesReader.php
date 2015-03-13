@@ -1,20 +1,20 @@
 <?php
 
-namespace Contao;
+namespace athletes;
 
 /**
- * Class ModuleHikersReader
+ * Class ModuleAthletesReader
  *
- * Front end module "hikers reader".
+ * Front end module "athletes reader".
  */
-class ModuleHikersReader extends \Module
+class ModuleAthletesReader extends \Module
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_hikersreader';
+	protected $strTemplate = 'mod_athletesreader';
 
 
 	/**
@@ -57,11 +57,11 @@ class ModuleHikersReader extends \Module
 	 */
 	protected function compile()
 	{
-		$objMember = $this->Database->prepare("SELECT * FROM tl_hikers WHERE alias=?")
+		$objMember = $this->Database->prepare("SELECT * FROM tl_athletes WHERE alias=?")
 								->limit(1)
 								->execute(\Input::get('items'));
 
-		// Display a 404 page if the Hikers was not found
+		// Display a 404 page if the Athletes was not found
 		if (!$objMember->numRows)
 		{
 			$objHandler = new $GLOBALS['TL_PTY']['error_404']();
@@ -88,7 +88,7 @@ class ModuleHikersReader extends \Module
 
 		$arrActs = array();
 
-		$objActs = $this->Database->prepare("SELECT * FROM tl_hikers_act WHERE pid=? ORDER BY sorting")
+		$objActs = $this->Database->prepare("SELECT * FROM tl_athletes_act WHERE pid=? ORDER BY sorting")
 								   ->execute($objMember->id);
 
 		// Return if there are acts

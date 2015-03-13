@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Table tl_hikers_act
+ * Table tl_athletes_act
  */
-$GLOBALS['TL_DCA']['tl_hikers_act'] = array
+$GLOBALS['TL_DCA']['tl_athletes_act'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ptable'                      => 'tl_hikers',
+		'ptable'                      => 'tl_athletes',
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -31,7 +31,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 			'fields'                  => array('sorting'),
 			'headerFields'            => array('name', 'post', 'joined'),
 			'panelLayout'             => 'search,limit',
-			'child_record_callback'   => array('tl_hikers_act', 'generateActRow')
+			'child_record_callback'   => array('tl_athletes_act', 'generateActRow')
 		),
 		'global_operations' => array
 		(
@@ -47,39 +47,39 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['edit'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['copy'],
 				'href'                => 'act=paste&amp;mode=copy',
 				'icon'                => 'copy.gif'
 			),
 			'cut' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['cut'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['cut'],
 				'href'                => 'act=paste&amp;mode=cut',
 				'icon'                => 'cut.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['toggle'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('tl_hikers_act', 'toggleIcon')
+				'button_callback'     => array('tl_athletes_act', 'toggleIcon')
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_hikers_act']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_act']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -113,7 +113,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers_act']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_act']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -122,7 +122,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 		),
 		'date' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers_act']['date'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_act']['date'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>8, 'tl_class'=>'w50'),
@@ -130,7 +130,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 		),
 		'image' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers_act']['image'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_act']['image'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
@@ -138,7 +138,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 		),
 		'published' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_hikers_act']['published'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_act']['published'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'flag'                    => 1,
@@ -153,7 +153,7 @@ $GLOBALS['TL_DCA']['tl_hikers_act'] = array
 /**
  * Provide miscellaneous methods that are used by the data configuration array
  */
-class tl_hikers_act extends Backend
+class tl_athletes_act extends Backend
 {
 
 	/**
@@ -213,12 +213,12 @@ class tl_hikers_act extends Backend
 		//	$this->redirect('contao/main.php?act=error');
 		//}
 
-		$this->createInitialVersion('tl_hikers', $intId);
+		$this->createInitialVersion('tl_athletes', $intId);
 
 		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_hikers']['fields']['published']['save_callback']))
+		if (is_array($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback']))
 		{
-			foreach ($GLOBALS['TL_DCA']['tl_hikers']['fields']['published']['save_callback'] as $callback)
+			foreach ($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback'] as $callback)
 			{
 				$this->import($callback[0]);
 				$blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
@@ -226,10 +226,10 @@ class tl_hikers_act extends Backend
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_hikers_act SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_athletes_act SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$this->createNewVersion('tl_hikers_act', $intId);
+		$this->createNewVersion('tl_athletes_act', $intId);
 
 	}
 }

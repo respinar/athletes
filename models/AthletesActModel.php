@@ -14,7 +14,7 @@
 /**
  * Run in a custom namespace, so the class can be replaced
  */
-namespace Contao;
+namespace athletes;
 
 
 /**
@@ -24,14 +24,14 @@ namespace Contao;
  * @author    Hamid Abbaszadeh <https://respinar.com>
  * @copyright Hamid Abbaszadeh 2013-2014
  */
-class HikersActModel extends \Model
+class AthletesActModel extends \Model
 {
 
 	/**
 	 * Table name
 	 * @var string
 	 */
-	protected static $strTable = 'tl_hikers';
+	protected static $strTable = 'tl_athletes';
 
 
 	/**
