@@ -1,24 +1,24 @@
 {
-    "name":"respinar/athletes",
-    "description":"Contao Athletes management module",
-    "keywords":["contao", "athletes","member"],
-    "type":"contao-module",
-    "homepage":"https://github.com/respinar/athletes/",
-    "license":"LGPL-3.0+",
+    "name": "respinar/athletes",
+    "description": "Contao Athletes management module",
+    "keywords": ["contao", "athletes", "member"],
+    "type": "contao-module",
+    "homepage": "https://github.com/respinar/athletes",
+    "license": "LGPL-3.0+",
     "authors": [
         {
             "name": "Hamid Abbaszadeh",
             "email": "info@respinar.com",
             "homepage": "http://respinar.com/",
-            "role":"Developer"
+            "role": "Developer"
         }
     ],
-    "support":{
-            "issues":"https://github.com/respinar/athletes/issues"
+    "support": {
+            "issues": "https://github.com/respinar/athletes/issues"
     },
     "require": {
-        "php":">=5.3.2",
-        "contao/core":">=3.2,<4-dev",
+        "php": ">=5.3.2",
+        "contao/core": ">=3.2,<4-dev",
         "contao-community-alliance/composer-plugin": "~2.0"
     },
     "extra": {
