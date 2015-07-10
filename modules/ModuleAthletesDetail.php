@@ -1,13 +1,21 @@
 <?php
+	
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @license LGPL-3.0+
+ */
 
 namespace athletes;
 
 /**
- * Class ModuleAthletesReader
+ * Class ModuleAthletesDetail
  *
- * Front end module "athletes reader".
+ * Front end module "athletes detail".
  */
-class ModuleAthletesReader extends \Module
+class ModuleAthletesReader extends \ModuleAthletes
 {
 
 	/**
