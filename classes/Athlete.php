@@ -17,8 +17,6 @@
  */
 namespace athletes;
 
-
-
 /**
  * Class Athletes
  *
@@ -30,7 +28,7 @@ class Athletes extends \Frontend
 {
 
 	/**
-	 * Add news items to the indexer
+	 * Add athletes items to the indexer
 	 * @param array
 	 * @param integer
 	 * @param boolean
@@ -48,30 +46,30 @@ class Athletes extends \Frontend
 		$time = time();
 		$arrProcessed = array();
 
-		// Get all news archives
-		$objArchive = \NewsArchiveModel::findByProtected('');
+		// Get all athletes categories
+		$objCategory = \AthletesCategoryModel::findByProtected('');
 
 		// Walk through each archive
-		if ($objArchive !== null)
+		if ($objCategory !== null)
 		{
-			while ($objArchive->next())
+			while ($objCategory->next())
 			{
-				// Skip news archives without target page
-				if (!$objArchive->jumpTo)
+				// Skip athletes archives without target page
+				if (!$objCategory->jumpTo)
 				{
 					continue;
 				}
 
-				// Skip news archives outside the root nodes
-				if (!empty($arrRoot) && !in_array($objArchive->jumpTo, $arrRoot))
+				// Skip athletes archives outside the root nodes
+				if (!empty($arrRoot) && !in_array($objCategory->jumpTo, $arrRoot))
 				{
 					continue;
 				}
 
 				// Get the URL of the jumpTo page
-				if (!isset($arrProcessed[$objArchive->jumpTo]))
+				if (!isset($arrProcessed[$objCategory->jumpTo]))
 				{
-					$objParent = \PageModel::findWithDetails($objArchive->jumpTo);
+					$objParent = \PageModel::findWithDetails($objCategory->jumpTo);
 
 					// The target page does not exist
 					if ($objParent === null)
@@ -95,19 +93,19 @@ class Athletes extends \Frontend
 					$domain = ($objParent->rootUseSSL ? 'https://' : 'http://') . ($objParent->domain ?: \Environment::get('host')) . TL_PATH . '/';
 
 					// Generate the URL
-					$arrProcessed[$objArchive->jumpTo] = $domain . $this->generateFrontendUrl($objParent->row(), (($GLOBALS['TL_CONFIG']['useAutoItem'] && !$GLOBALS['TL_CONFIG']['disableAlias']) ?  '/%s' : '/items/%s'), $objParent->language);
+					$arrProcessed[$objCategory->jumpTo] = $domain . $this->generateFrontendUrl($objParent->row(), (($GLOBALS['TL_CONFIG']['useAutoItem'] && !$GLOBALS['TL_CONFIG']['disableAlias']) ?  '/%s' : '/items/%s'), $objParent->language);
 				}
 
-				$strUrl = $arrProcessed[$objArchive->jumpTo];
+				$strUrl = $arrProcessed[$objCategory->jumpTo];
 
 				// Get the items
-				$objArticle = \NewsModel::findPublishedDefaultByPid($objArchive->id);
+				$objAthlete = \AthletesModel::findPublishedDefaultByPid($objCategory->id);
 
-				if ($objArticle !== null)
+				if ($objAthlete !== null)
 				{
-					while ($objArticle->next())
+					while ($objAthlete->next())
 					{
-						$arrPages[] = $this->getLink($objArticle, $strUrl);
+						$arrPages[] = $this->getLink($objAthlete, $strUrl);
 					}
 				}
 			}
@@ -118,7 +116,7 @@ class Athletes extends \Frontend
 
 
 	/**
-	 * Return the link of a news article
+	 * Return the link of a atheletes
 	 * @param object
 	 * @param string
 	 * @param string
@@ -143,7 +141,7 @@ class Athletes extends \Frontend
 
 			// Link to an article
 			case 'article':
-				if (($objArticle = \ArticleModel::findByPk($objItem->articleId, array('eager'=>true))) !== null && ($objPid = $objArticle->getRelated('pid')) !== null)
+				if (($objAthlete = \ArticleModel::findByPk($objItem->articleId, array('eager'=>true))) !== null && ($objPid = $objArticle->getRelated('pid')) !== null)
 				{
 					return $strBase . ampersand($this->generateFrontendUrl($objPid->row(), '/articles/' . ((!$GLOBALS['TL_CONFIG']['disableAlias'] && $objArticle->alias != '') ? $objArticle->alias : $objArticle->id)));
 				}

@@ -18,20 +18,20 @@
 namespace athletes;
 
 /**
- * Class ModuleAthletesList
+ * Class ModuleAthleteList
  *
  * @copyright  respinar 2013-2015
  * @author     Hamid Abbaszadeh
  * @package    athletes
  */
-class ModuleAthletesList extends \ModuleAthletes
+class ModuleAthleteList extends \ModuleAthlete
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_athleteslist';
+	protected $strTemplate = 'mod_athletelist';
 
 
 	/**
@@ -65,7 +65,7 @@ class ModuleAthletesList extends \ModuleAthletes
 
 		$intList = $this->athletes_group;
 
-		$objMembers = $this->Database->prepare("SELECT * FROM tl_athletes WHERE published=1 AND pid=? ORDER BY sorting")->execute($intList);
+		$objMembers = $this->Database->prepare("SELECT * FROM tl_athlete WHERE published=1 AND pid=? ORDER BY sorting")->execute($intList);
 
 		//$objMembers = \MembersModel;
 

@@ -18,13 +18,13 @@
 namespace athletes;
 
 /**
- * Class ModuleAthletes
+ * Class ModuleAthlete
  *
  * @copyright  respinar 2013-2015
  * @author     Hamid Abbaszadeh
  * @package    athletes
  */
-abstract class ModuleAthletes extends \Module
+abstract class ModuleAthlete extends \Module
 {
 
 	/**

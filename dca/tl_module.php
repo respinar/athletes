@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['athletes_group'] = array
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['athletes_group'],
 	'exclude'              => true,
 	'inputType'            => 'radio',
-	'foreignKey'           => 'tl_athletes_category.title',
+	'foreignKey'           => 'tl_athlete_category.title',
 	'eval'                 => array('multiple'=>false, 'mandatory'=>true),
 	'sql'				   => "int(10) unsigned NOT NULL default '0'",
 );

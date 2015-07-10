@@ -27,12 +27,12 @@ ClassLoader::addClasses(array
 	'athletes\Athletes'              => 'system/modules/athletes/classes/Athletes.php',
 
 	// Models
-	'athletes\AthletesModel'         => 'system/modules/athletes/models/AthletesModel.php',
-	'athletes\AthletesCategoryModel' => 'system/modules/athletes/models/AthletesCategoryModel.php',
+	'athletes\AthleteModel'         => 'system/modules/athletes/models/AthletesModel.php',
+	'athletes\AthleteCategoryModel' => 'system/modules/athletes/models/AthletesCategoryModel.php',
 
 	// Modules
-	'athletes\ModuleAthletesList'    => 'system/modules/athletes/modules/ModuleAthletesList.php',
-	'athletes\ModuleAthletes'        => 'system/modules/athletes/modules/ModuleAthletes.php',
+	'athletes\ModuleAthleteList'    => 'system/modules/athletes/modules/ModuleAthletesList.php',
+	'athletes\ModuleAthlete'        => 'system/modules/athletes/modules/ModuleAthletes.php',
 ));
 
 
@@ -41,6 +41,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_athletes_list'   => 'system/modules/athletes/templates/modules',
-	'mod_athletes_detail' => 'system/modules/athletes/templates/modules',
+	'mod_athlete_list'   => 'system/modules/athletes/templates/modules',
+	'mod_athlete_detail' => 'system/modules/athletes/templates/modules',
 ));

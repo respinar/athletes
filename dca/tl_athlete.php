@@ -13,16 +13,16 @@
  
  
 /**
- * Table tl_athletes
+ * Table tl_athlete
  */
-$GLOBALS['TL_DCA']['tl_athletes'] = array
+$GLOBALS['TL_DCA']['tl_athlete'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ptable'                      => 'tl_athletes_category',
+		'ptable'                      => 'tl_athlete_category',
 		'ctable'                      => array('tl_content'),
 		'enableVersioning'            => true,
 		'sql' => array
@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'fields'                  => array('sorting'),
 			'headerFields'            => array('title'),
 			'panelLayout'             => 'search,limit',
-			'child_record_callback'   => array('tl_athletes', 'generateActRow')
+			'child_record_callback'   => array('tl_athlete', 'generateActRow')
 		),
 		'global_operations' => array
 		(
@@ -60,39 +60,39 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['edit'],
 				'href'                => 'table=tl_content',
 				'icon'                => 'edit.gif'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['toggle'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('tl_athletes', 'toggleIcon')
+				'button_callback'     => array('tl_athlete', 'toggleIcon')
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -133,7 +133,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -142,7 +142,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'alias' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['alias'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['alias'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -151,7 +151,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'post' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['post'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['post'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
@@ -160,7 +160,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'joined' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['joined'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['joined'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
@@ -169,7 +169,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'certs' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['certs'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['certs'],
 			'exclude'                 => true,
 			'filter'                  => flase,
 			'inputType'               => 'listWizard',
@@ -178,7 +178,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'singleSRC' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['singleSRC'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['singleSRC'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
@@ -186,7 +186,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'description' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['description'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'textarea',
@@ -195,7 +195,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'published' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['published'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['published'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'flag'                    => 1,
@@ -205,7 +205,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'start' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['start'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['start'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
@@ -213,7 +213,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		),
 		'stop' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['stop'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['stop'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
@@ -222,7 +222,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 	)
 );
 
-class tl_athletes extends Backend {
+class tl_athlete extends Backend {
 
 
 	public function generateActRow($arrRow)
@@ -277,12 +277,12 @@ class tl_athletes extends Backend {
 		//	$this->redirect('contao/main.php?act=error');
 		//}
 
-		$this->createInitialVersion('tl_athletes', $intId);
+		$this->createInitialVersion('tl_athlete', $intId);
 
 		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback']))
+		if (is_array($GLOBALS['TL_DCA']['tl_athlete']['fields']['published']['save_callback']))
 		{
-			foreach ($GLOBALS['TL_DCA']['tl_athletes']['fields']['published']['save_callback'] as $callback)
+			foreach ($GLOBALS['TL_DCA']['tl_athlete']['fields']['published']['save_callback'] as $callback)
 			{
 				$this->import($callback[0]);
 				$blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
@@ -290,10 +290,10 @@ class tl_athletes extends Backend {
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_athletes SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_athlete SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$this->createNewVersion('tl_athletes', $intId);
+		$this->createNewVersion('tl_athlete', $intId);
 
 	}
 

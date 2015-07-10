@@ -13,16 +13,16 @@
 
 
 /**
- * Table tl_athletes_category
+ * Table tl_athlete_category
  */
-$GLOBALS['TL_DCA']['tl_athletes_category'] = array
+$GLOBALS['TL_DCA']['tl_athlete_category'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_athletes'),
+		'ctable'                      => array('tl_athlete'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -62,32 +62,32 @@ $GLOBALS['TL_DCA']['tl_athletes_category'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_category']['edit'],
-				'href'                => 'table=tl_athletes',
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete_category']['edit'],
+				'href'                => 'table=tl_athlete',
 				'icon'                => 'edit.gif'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_category']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete_category']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_category']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete_category']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_category']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete_category']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athletes_category']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete_category']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_athletes_category'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_category']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete_category']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -130,7 +130,7 @@ $GLOBALS['TL_DCA']['tl_athletes_category'] = array
 		),
 		'jumpTo' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_category']['jumpTo'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete_category']['jumpTo'],
 			'exclude'                 => true,
 			'inputType'               => 'pageTree',
 			'foreignKey'              => 'tl_page.title',
@@ -140,7 +140,7 @@ $GLOBALS['TL_DCA']['tl_athletes_category'] = array
 		),
 		'protected' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_category']['protected'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete_category']['protected'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true),
@@ -148,7 +148,7 @@ $GLOBALS['TL_DCA']['tl_athletes_category'] = array
 		),
 		'groups' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes_category']['groups'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete_category']['groups'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'foreignKey'              => 'tl_member_group.name',

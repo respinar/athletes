@@ -18,19 +18,19 @@
 namespace athletes;
 
 /**
- * Class AthletesCategoryModel
+ * Class AthleteModel
  *
  * @copyright  respinar 2013-2015
  * @author     Hamid Abbaszadeh
  * @package    athletes
  */
-class AthletesCategoryModel extends \Model
+class AthleteModel extends \Model
 {
 
 	/**
 	 * Table name
 	 * @var string
 	 */
-	protected static $strTable = 'tl_athletes_category';
+	protected static $strTable = 'tl_athlete';
 
 }

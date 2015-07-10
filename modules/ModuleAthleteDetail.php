@@ -18,20 +18,20 @@
 namespace athletes;
 
 /**
- * Class ModuleAthletesDetail
+ * Class ModuleAthleteDetail
  *
  * @copyright  respinar 2013-2015
  * @author     Hamid Abbaszadeh
  * @package    athletes
  */
-class ModuleAthletesDetail extends \ModuleAthletes
+class ModuleAthleteDetail extends \ModuleAthlete
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_athletesdetail';
+	protected $strTemplate = 'mod_athletedetail';
 
 
 	/**
@@ -74,7 +74,7 @@ class ModuleAthletesDetail extends \ModuleAthletes
 	 */
 	protected function compile()
 	{
-		$objMember = $this->Database->prepare("SELECT * FROM tl_athletes WHERE alias=?")
+		$objMember = $this->Database->prepare("SELECT * FROM tl_athlete WHERE alias=?")
 								->limit(1)
 								->execute(\Input::get('items'));
 

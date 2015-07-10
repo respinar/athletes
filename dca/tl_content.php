@@ -17,7 +17,7 @@
  */
 if (Input::get('do') == 'athletes')
 {
-	$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_athletes';
+	$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_athlete';
 	//$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('tl_content_news', 'checkPermission');
 }
 
@@ -129,13 +129,13 @@ class tl_content_athletes extends Backend
 	{
 		if ($blnIsPid)
 		{
-			$objArchive = $this->Database->prepare("SELECT a.id, n.id AS nid FROM tl_athletes n, tl_athletes_category a WHERE n.id=? AND n.pid=a.id")
+			$objArchive = $this->Database->prepare("SELECT a.id, n.id AS nid FROM tl_athlete n, tl_athlete_category a WHERE n.id=? AND n.pid=a.id")
 										 ->limit(1)
 										 ->execute($id);
 		}
 		else
 		{
-			$objArchive = $this->Database->prepare("SELECT a.id, n.id AS nid FROM tl_content c, tl_athletes n, tl_athletes_category a WHERE c.id=? AND c.pid=n.id AND n.pid=a.id")
+			$objArchive = $this->Database->prepare("SELECT a.id, n.id AS nid FROM tl_content c, tl_athlete n, tl_athlete_category a WHERE c.id=? AND c.pid=n.id AND n.pid=a.id")
 										 ->limit(1)
 										 ->execute($id);
 		}
