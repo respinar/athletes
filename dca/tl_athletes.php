@@ -1,5 +1,13 @@
 <?php
-
+	
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @license LGPL-3.0+
+ */
+ 
 /**
  * Table tl_athletes
  */
@@ -10,8 +18,8 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ptable'                      => 'tl_athletes_group',
-		'ctable'                      => array('tl_athletes_act'),
+		'ptable'                      => 'tl_athletes_category',
+		'ctable'                      => array('tl_content'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
@@ -34,12 +42,6 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'panelLayout'             => 'search,limit',
 			'child_record_callback'   => array('tl_athletes', 'generateActRow')
 		),
-		//'label' => array
-		//(
-			//'fields'                  => array('name','family', 'post'),
-			//'format'                  => '%s %s <span style="color:#b3b3b3;padding-left:3px;">[%s]</span>',
-			//'label_callback'          => array('tl_athletes', 'addPhoto')
-		//),
 		'global_operations' => array
 		(
 			'all' => array
@@ -55,7 +57,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_athletes']['edit'],
-				'href'                => 'table=tl_athletes_act',
+				'href'                => 'table=tl_content',
 				'icon'                => 'edit.gif'
 			),
 			'editheader' => array
@@ -96,14 +98,14 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('certImage'),
-		'default'                     => '{name_legend},name,family,alias,joined,post,certs;{photo_legend},photo,certImage;{description_legend:hide},description;{publish_legend},published'
+		'__selector__'                => array('published'),
+		'default'                     => '{title_legend},title,alias;{photo_legend},singleSRC;{specs_legend},post,joined,certs;{description_legend:hide},description;{publish_legend},published'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'certImage'                   => 'multiSRC',
+		'published'                   => 'start,stop'
 	),
 
 	// Fields
@@ -125,18 +127,9 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 		(
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),
-		'name' => array
+		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['name'],
-			'exclude'                 => true,
-			'search'                  => true,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(128) NOT NULL default ''"
-		),
-		'family' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['family'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
@@ -167,7 +160,7 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>4, 'tl_class'=>'w50'),
+			'eval'                    => array('rgxp'=>'digit','datepicker'=>true,'tl_class'=>'w50'),
 			'sql'                     => "varchar(4) NOT NULL default ''"
 		),
 		'certs' => array
@@ -179,34 +172,13 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'eval'                    => array('tl_class'=>'clr'),
 			'sql'                     => "blob NULL"
 		),
-		'photo' => array
+		'singleSRC' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['photo'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['singleSRC'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => "binary(16) NULL"
-		),
-		'certImage' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['certImage'],
-			'exclude'                 => true,
-			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true),
-			'sql'                     => "char(1) NOT NULL default ''"
-		),
-		'multiSRC' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['multiSRC'],
-			'exclude'                 => true,
-			'inputType'               => 'fileTree',
-			'eval'                    => array('multiple'=>true, 'fieldType'=>'checkbox', 'orderField'=>'orderSRC', 'files'=>true, 'mandatory'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
-			'sql'                     => "blob NULL",
-		),
-		'orderSRC' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['orderSRC'],
-			'sql'                     => "blob NULL"
 		),
 		'description' => array
 		(
@@ -224,8 +196,24 @@ $GLOBALS['TL_DCA']['tl_athletes'] = array
 			'filter'                  => true,
 			'flag'                    => 1,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50'),
+			'eval'                    => array('doNotCopy'=>true,'submitOnChange'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
+		),
+		'start' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['start'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
+		),
+		'stop' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athletes']['stop'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
 		)
 	)
 );
@@ -235,14 +223,14 @@ class tl_athletes extends Backend {
 
 	public function generateActRow($arrRow)
 	{
-		$objImage = \FilesModel::findByPk($arrRow['photo']);
+		$objImage = \FilesModel::findByPk($arrRow['singleSRC']);
 
 		if ($objImage !== null)
 		{
 			$strImage = \Image::getHtml(\Image::get($objImage->path, '25', '33', 'center_center'));
 		}
 
-		return '<div><div style="float:left; margin-right:10px;">'.$strImage.'</div>'.$arrRow['name'].' '. $arrRow['family'] . ' <br /><span style="padding-left:3px;color:#b3b3b3;">[' . $arrRow['post'] . ']</span></div>';
+		return '<div><div style="float:left; margin-right:10px;">'.$strImage.'</div>'.$arrRow['title'] . ' <br /><span style="padding-left:3px;color:#b3b3b3;">[' . $arrRow['post'] . ']</span></div>';
 	}
 
 	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)

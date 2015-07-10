@@ -4,18 +4,26 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_athletes']['title']       = array('Title', 'Please enter the athletes title.');
-$GLOBALS['TL_LANG']['tl_athletes']['artist']      = array('Artist name', 'Please enter the artist name.');
-$GLOBALS['TL_LANG']['tl_athletes']['genre']       = array('Genre', 'Here you can enter the athletes genre.');
-$GLOBALS['TL_LANG']['tl_athletes']['year']        = array('Year released', 'Here you can enter the year athletes was released.');
-$GLOBALS['TL_LANG']['tl_athletes']['cover']       = array('Cover image', 'Here you can choose an image of the cover.');
+$GLOBALS['TL_LANG']['tl_athletes']['alias']       = array('Alias', 'Please enter the athletes alias.');
+$GLOBALS['TL_LANG']['tl_athletes']['joined']      = array('Joined', '');
+$GLOBALS['TL_LANG']['tl_athletes']['post']        = array('Post', '');
+$GLOBALS['TL_LANG']['tl_athletes']['certs']       = array('Certificates', '');
+$GLOBALS['TL_LANG']['tl_athletes']['singleSRC']   = array('Photo', '');
 $GLOBALS['TL_LANG']['tl_athletes']['description'] = array('Description', 'Here you can enter the athletes description.');
+$GLOBALS['TL_LANG']['tl_athletes']['published']   = array('Publish item', 'Make the athletes item publicly visible on the website.');
+$GLOBALS['TL_LANG']['tl_athletes']['start']       = array('Show from', 'Do not show the athletes item on the website before this day.');
+$GLOBALS['TL_LANG']['tl_athletes']['stop']        = array('Show until', 'Do not show the athletes item on the website on and after this day.');
+
 
 
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_athletes']['title_legend'] = 'Title and artist';
-$GLOBALS['TL_LANG']['tl_athletes']['cover_legend'] = 'Cover and description';
+$GLOBALS['TL_LANG']['tl_athletes']['title_legend']       = 'Title';
+$GLOBALS['TL_LANG']['tl_athletes']['specs_legend']       = 'Specifications';
+$GLOBALS['TL_LANG']['tl_athletes']['photo_legend']       = 'Photo';
+$GLOBALS['TL_LANG']['tl_athletes']['description_legend'] = 'Description';
+$GLOBALS['TL_LANG']['tl_athletes']['publish_legend']     = 'Publish settings';
 
 
 /**

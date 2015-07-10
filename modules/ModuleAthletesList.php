@@ -1,4 +1,12 @@
 <?php
+	
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @license LGPL-3.0+
+ */
 
 namespace athletes;
 
@@ -8,7 +16,7 @@ namespace athletes;
  * Front end module "athletes list".
  */
 
-class ModuleAthletesList extends \Module
+class ModuleAthletesList extends \ModuleAthletes
 {
 
 	/**
