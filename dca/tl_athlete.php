@@ -103,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('published'),
-		'default'                     => '{title_legend},title,alias;{photo_legend},singleSRC;{specs_legend},post,joined,certs;{description_legend:hide},description;{publish_legend},published'
+		'default'                     => '{title_legend},title,alias;{photo_legend},singleSRC;{specs_legend},post,joined,certs;{contact_legend},mobile,phone,email,website;{description_legend:hide},description;{publish_legend},published'
 	),
 
 	// Subpalettes
@@ -183,6 +183,42 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => "binary(16) NULL"
+		),
+		'phone' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['phone'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>64, 'rgxp'=>'phone', 'decodeEntities'=>true, 'feEditable'=>true, 'feViewable'=>true, 'feStaff'=>'contact', 'tl_class'=>'w50'),
+			'sql'                     => "varchar(64) NOT NULL default ''"
+		),
+		'mobile' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['mobile'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>64, 'rgxp'=>'phone', 'decodeEntities'=>true, 'feEditable'=>true, 'feViewable'=>true, 'feStaff'=>'contact', 'tl_class'=>'w50'),
+			'sql'                     => "varchar(64) NOT NULL default ''"
+		),
+		'email' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['email'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'rgxp'=>'email', 'unique'=>true, 'decodeEntities'=>true, 'feEditable'=>true, 'feViewable'=>true, 'feStaff'=>'contact', 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'website' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['website'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'url', 'maxlength'=>255, 'feEditable'=>true, 'feViewable'=>true, 'feStaff'=>'contact', 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'description' => array
 		(
