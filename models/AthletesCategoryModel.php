@@ -24,13 +24,13 @@ namespace athletes;
  * @author    Hamid Abbaszadeh <http://respinar.com>
  * @copyright Hamid Abbaszadeh 2013-2014
  */
-class AthletesGroupModel extends \Model
+class AthletesCategoryModel extends \Model
 {
 
 	/**
 	 * Table name
 	 * @var string
 	 */
-	protected static $strTable = 'tl_athletes_group';
+	protected static $strTable = 'tl_athletes_category';
 
 }
