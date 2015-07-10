@@ -8,7 +8,7 @@
  *
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  *
- * last-updated: 2015-07-10T18:03:10+04:30
+ * last-updated: 2015-07-10T18:06:03+04:30
  */
 
 $GLOBALS['TL_LANG']['tl_athlete']['alias']['0']         = 'اسم مستعار';
@@ -22,6 +22,8 @@ $GLOBALS['TL_LANG']['tl_athlete']['delete']['1']        = 'حذف ورزش‌ک�
 $GLOBALS['TL_LANG']['tl_athlete']['description']['0']   = 'توضیحات';
 $GLOBALS['TL_LANG']['tl_athlete']['description']['1']   = 'لطفا توضیحات را وارد نمایید.';
 $GLOBALS['TL_LANG']['tl_athlete']['description_legend'] = 'توضیحات';
+$GLOBALS['TL_LANG']['tl_athlete']['editpage']['0']      = 'ویرایش برگه‌ی ورزش‌کار';
+$GLOBALS['TL_LANG']['tl_athlete']['editpage']['1']      = 'ویرایش برگه‌ی ورزش‌کار شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_athlete']['editpahge']['0']     = 'ویرایش برگه‌ی ورزش‌کار';
 $GLOBALS['TL_LANG']['tl_athlete']['editpahge']['1']     = 'ویرایش برگه‌ی ورزش‌کار شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_athlete']['editprofile']['0']   = 'ویرایش پروفایل ورزش‌کار';

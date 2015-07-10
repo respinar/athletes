@@ -43,7 +43,7 @@ $GLOBALS['TL_LANG']['tl_athlete']['publish_legend']     = 'Publish settings';
  */
 $GLOBALS['TL_LANG']['tl_athlete']['new']         = array('Add Athlete', 'Add a new athlete');
 $GLOBALS['TL_LANG']['tl_athlete']['show']        = array('Athlete details', 'Show the details of athlete ID %s');
-$GLOBALS['TL_LANG']['tl_athlete']['editpahge']   = array('Edit athlete page', 'Edit page of athlete ID %s');
+$GLOBALS['TL_LANG']['tl_athlete']['editpage']    = array('Edit athlete page', 'Edit page of athlete ID %s');
 $GLOBALS['TL_LANG']['tl_athlete']['editprofile'] = array('Edit athlete profile', 'Edit profile of athlete ID %s');
 $GLOBALS['TL_LANG']['tl_athlete']['copy']        = array('Copy athlete', 'Copy athlete ID %s');
 $GLOBALS['TL_LANG']['tl_athlete']['delete']      = array('Delete athlete', 'Delete athlete ID %s');
