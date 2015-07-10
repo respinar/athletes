@@ -17,7 +17,7 @@
  */
 $GLOBALS['TL_LANG']['tl_athlete']['title']       = array('Athlete title', 'Please enter the athlete title.');
 $GLOBALS['TL_LANG']['tl_athlete']['alias']       = array('Alias', 'Please enter the athlete alias.');
-$GLOBALS['TL_LANG']['tl_athlete']['joined']      = array('Joined', 'Please enter joined date.');
+$GLOBALS['TL_LANG']['tl_athlete']['date']        = array('Join date', 'Please enter joined date.');
 $GLOBALS['TL_LANG']['tl_athlete']['post']        = array('Post', 'Please enter the athlete post.');
 $GLOBALS['TL_LANG']['tl_athlete']['certs']       = array('Certificates', 'Please enter the athlete certificates.');
 $GLOBALS['TL_LANG']['tl_athlete']['singleSRC']   = array('Photo', 'Please select an image from the files directory.');

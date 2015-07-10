@@ -30,3 +30,8 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
  */
 $GLOBALS['FE_MOD']['athlete']['athlete_list']   = 'ModuleAthleteList';
 $GLOBALS['FE_MOD']['athlete']['athlete_detail'] = 'ModuleAthleteDetail';
+
+/**
+ * Register hook to add athletes items to the indexer
+ */
+$GLOBALS['TL_HOOKS']['getSearchablePages'][]     = array('Athlete', 'getSearchablePages');

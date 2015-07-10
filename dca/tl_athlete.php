@@ -158,13 +158,13 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 			'eval'                    => array('maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(128) NOT NULL default ''"
 		),
-		'joined' => array
+		'date' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['joined'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_athlete']['date'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'digit','datepicker'=>true,'tl_class'=>'w50'),
+			'eval'                    => array('rgxp'=>'date','datepicker'=>true,'tl_class'=>'w50'),
 			'sql'                     => "varchar(4) NOT NULL default ''"
 		),
 		'certs' => array
@@ -226,7 +226,7 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE'),
+			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
 			'sql'                     => "text NULL"
 		),
 		'published' => array

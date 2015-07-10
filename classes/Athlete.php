@@ -47,7 +47,7 @@ class Athlete extends \Frontend
 		$arrProcessed = array();
 
 		// Get all athletes categories
-		$objCategory = \AthletesCategoryModel::findByProtected('');
+		$objCategory = \AthleteCategoryModel::findByProtected('');
 
 		// Walk through each archive
 		if ($objCategory !== null)
@@ -99,7 +99,7 @@ class Athlete extends \Frontend
 				$strUrl = $arrProcessed[$objCategory->jumpTo];
 
 				// Get the items
-				$objAthlete = \AthletesModel::findPublishedDefaultByPid($objCategory->id);
+				$objAthlete = \AthleteModel::findPublishedDefaultByPid($objCategory->id);
 
 				if ($objAthlete !== null)
 				{

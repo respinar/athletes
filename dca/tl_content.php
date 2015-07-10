@@ -18,7 +18,7 @@
 if (Input::get('do') == 'athletes')
 {
 	$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_athlete';
-	//$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('tl_content_news', 'checkPermission');
+	//$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('tl_content_athletes', 'checkPermission');
 }
 
 
@@ -70,7 +70,7 @@ class tl_content_athletes extends Backend
 			case '': // empty
 			case 'create':
 			case 'select':
-				// Check access to the news item
+				// Check access to the athlete item
 				if (!$this->checkAccessToElement(CURRENT_ID, $root, true))
 				{
 					$this->redirect('contao/main.php?act=error');
@@ -88,7 +88,7 @@ class tl_content_athletes extends Backend
 					$this->redirect('contao/main.php?act=error');
 				}
 
-				$objCes = $this->Database->prepare("SELECT id FROM tl_content WHERE ptable='tl_news' AND pid=?")
+				$objCes = $this->Database->prepare("SELECT id FROM tl_content WHERE ptable='tl_athlete' AND pid=?")
 										 ->execute(CURRENT_ID);
 
 				$session = $this->Session->getData();
