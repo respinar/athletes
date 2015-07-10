@@ -3,26 +3,26 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Members
- * @link    https://respinar.com
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
 
 
 /**
- * Run in a custom namespace, so the class can be replaced
+ * Namespace
  */
 namespace athletes;
 
-
 /**
- * Reads and writes members categories
+ * Class AthletesModel
  *
- * @package   Models
- * @author    Hamid Abbaszadeh <http://respinar.com>
- * @copyright Hamid Abbaszadeh 2013-2014
+ * @copyright  respinar 2013-2015
+ * @author     Hamid Abbaszadeh
+ * @package    athletes
  */
 class AthletesModel extends \Model
 {

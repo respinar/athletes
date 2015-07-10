@@ -5,17 +5,25 @@
  *
  * Copyright (c) 2005-2015 Leo Feyer
  *
- * @license LGPL-3.0+
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
 
+
+/**
+ * Namespace
+ */
 namespace athletes;
 
 /**
  * Class ModuleAthletesList
  *
- * Front end module "athletes list".
+ * @copyright  respinar 2013-2015
+ * @author     Hamid Abbaszadeh
+ * @package    athletes
  */
-
 class ModuleAthletesList extends \ModuleAthletes
 {
 

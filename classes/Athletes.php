@@ -3,27 +3,28 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Members
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
 
 
 /**
- * Run in a custom namespace, so the class can be replaced
+ * Namespace
  */
 namespace athletes;
 
 
+
 /**
- * Class Members
+ * Class Athletes
  *
- * Provide methods regarding Members lists.
- * @copyright  Hamid Abbaszadeh 2013-2014
- * @author     Hamid Abbaszadeh <http://respinar.com>
- * @package    Members
+ * @copyright  respinar 2013-2015
+ * @author     Hamid Abbaszadeh
+ * @package    athletes
  */
 class Athletes extends \Frontend
 {

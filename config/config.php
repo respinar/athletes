@@ -5,8 +5,12 @@
  *
  * Copyright (c) 2005-2015 Leo Feyer
  *
- * @license LGPL-3.0+
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
+
 
 /**
  * Back end modules

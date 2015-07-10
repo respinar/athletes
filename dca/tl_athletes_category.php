@@ -5,18 +5,10 @@
  *
  * Copyright (c) 2005-2015 Leo Feyer
  *
- * @license LGPL-3.0+
- */
- 
-/**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2014 Leo Feyer
- *
- * @package   athletes
+ * @package   atheletes
  * @author    Hamid Abbaszadeh
- * @license   GNU/LGPL
- * @copyright 2014
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
 
 

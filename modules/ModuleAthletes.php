@@ -5,16 +5,24 @@
  *
  * Copyright (c) 2005-2015 Leo Feyer
  *
- * @license LGPL-3.0+
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
-
-namespace athletes;
 
 
 /**
- * Parent class for athletes modules.
+ * Namespace
+ */
+namespace athletes;
+
+/**
+ * Class ModuleAthletes
  *
- * @author Hamid Abbaszadeh <https://github.com/respinar>
+ * @copyright  respinar 2013-2015
+ * @author     Hamid Abbaszadeh
+ * @package    athletes
  */
 abstract class ModuleAthletes extends \Module
 {

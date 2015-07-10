@@ -5,24 +5,33 @@
  *
  * Copyright (c) 2005-2015 Leo Feyer
  *
- * @license LGPL-3.0+
+ * @package   atheletes
+ * @author    Hamid Abbaszadeh
+ * @license   LGPL-3.0+
+ * @copyright respinar 2013-2015
  */
 
+
+/**
+ * Namespace
+ */
 namespace athletes;
 
 /**
  * Class ModuleAthletesDetail
  *
- * Front end module "athletes detail".
+ * @copyright  respinar 2013-2015
+ * @author     Hamid Abbaszadeh
+ * @package    athletes
  */
-class ModuleAthletesReader extends \ModuleAthletes
+class ModuleAthletesDetail extends \ModuleAthletes
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'mod_athletesreader';
+	protected $strTemplate = 'mod_athletesdetail';
 
 
 	/**
