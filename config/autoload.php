@@ -3,11 +3,9 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Athletes
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @license LGPL-3.0+
  */
 
 
@@ -26,16 +24,15 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'Contao\Athletes'             => 'system/modules/athletes/classes/Athletes.php',
+	'athletes\Athletes'              => 'system/modules/athletes/classes/Athletes.php',
 
 	// Models
-	'athletes\AthletesModel'        => 'system/modules/athletes/models/AthletesModel.php',
-	'athletes\AthletesGroupModel'   => 'system/modules/athletes/models/AthletesGroupModel.php',
-	'athletes\AthletesActModel'     => 'system/modules/athletes/models/AthletesActModel.php',
+	'athletes\AthletesModel'         => 'system/modules/athletes/models/AthletesModel.php',
+	'athletes\AthletesCategoryModel' => 'system/modules/athletes/models/AthletesCategoryModel.php',
 
 	// Modules
-	'athletes\ModuleAthletesReader' => 'system/modules/athletes/modules/ModuleAthletesReader.php',
-	'athletes\ModuleAthletesList'   => 'system/modules/athletes/modules/ModuleAthletesList.php',
+	'athletes\ModuleAthletesList'    => 'system/modules/athletes/modules/ModuleAthletesList.php',
+	'athletes\ModuleAthletes'        => 'system/modules/athletes/modules/ModuleAthletes.php',
 ));
 
 
@@ -44,6 +41,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_athletesreader' => 'system/modules/athletes/templates/modules',
-	'mod_athleteslist'   => 'system/modules/athletes/templates/modules',
+	'mod_athletes_list'   => 'system/modules/athletes/templates/modules',
+	'mod_athletes_detail' => 'system/modules/athletes/templates/modules',
 ));
