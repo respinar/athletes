@@ -18,13 +18,13 @@
 namespace athletes;
 
 /**
- * Class Athletes
+ * Class Athlete
  *
  * @copyright  respinar 2013-2015
  * @author     Hamid Abbaszadeh
  * @package    athletes
  */
-class Athletes extends \Frontend
+class Athlete extends \Frontend
 {
 
 	/**

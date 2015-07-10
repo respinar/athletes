@@ -24,15 +24,16 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'athletes\Athletes'              => 'system/modules/athletes/classes/Athletes.php',
+	'athletes\Athlete'              => 'system/modules/athletes/classes/Athlete.php',
 
 	// Models
-	'athletes\AthleteModel'         => 'system/modules/athletes/models/AthletesModel.php',
-	'athletes\AthleteCategoryModel' => 'system/modules/athletes/models/AthletesCategoryModel.php',
+	'athletes\AthleteCategoryModel' => 'system/modules/athletes/models/AthleteCategoryModel.php',
+	'athletes\AthleteModel'         => 'system/modules/athletes/models/AthleteModel.php',
 
 	// Modules
-	'athletes\ModuleAthleteList'    => 'system/modules/athletes/modules/ModuleAthletesList.php',
-	'athletes\ModuleAthlete'        => 'system/modules/athletes/modules/ModuleAthletes.php',
+	'athletes\ModuleAthlete'        => 'system/modules/athletes/modules/ModuleAthlete.php',
+	'athletes\ModuleAthleteDetail'  => 'system/modules/athletes/modules/ModuleAthleteDetail.php',
+	'athletes\ModuleAthleteList'    => 'system/modules/athletes/modules/ModuleAthleteList.php',
 ));
 
 
@@ -41,6 +42,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_athlete_list'   => 'system/modules/athletes/templates/modules',
 	'mod_athlete_detail' => 'system/modules/athletes/templates/modules',
+	'mod_athlete_list'   => 'system/modules/athletes/templates/modules',
 ));
