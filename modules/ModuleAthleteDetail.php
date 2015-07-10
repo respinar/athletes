@@ -86,10 +86,8 @@ class ModuleAthleteDetail extends \ModuleAthlete
 		}
 
 		global $objPage;
-		$objPage->title = $objMember->name .' '. $objMember->family;
+		$objPage->title = $objMember->title;
 
-		$this->Template->name = $objMember->name;
-        $this->Template->family = $objMember->family;
 		$this->Template->post = $objMember->post;
 		$this->Template->joined = $objMember->joined;
 		$this->Template->certs = deserialize($objMember->certs);
@@ -101,36 +99,5 @@ class ModuleAthleteDetail extends \ModuleAthlete
 		{
 			$this->Template->photo = \Image::getHtml(\Image::get($objPhoto->path, '200', '266', 'center_center'));
 		}
-
-
-		$arrActs = array();
-
-		$objActs = $this->Database->prepare("SELECT * FROM tl_athletes_act WHERE pid=? ORDER BY sorting")
-								   ->execute($objMember->id);
-
-		// Return if there are acts
-		if ($objActs->numRows)
-		{
-
-			// Generate acts
-			while ($objActs->next())
-			{
-				$objImage = \FilesModel::findByPk($objActs->image);
-
-				// Add image
-				if ($objImage !== null)
-				{
-					$image = \Image::getHtml(\Image::get($objImage->path, '200', '160', 'center_center'),$objActs->title);
-				}
-				$arrActs[] = array
-				(
-					'title' => $objActs->title,
-					'date' => $objActs->date,
-					'image' => $image
-				);
-			}
-		}
-
-		$this->Template->acts = $arrActs;
 	}
 }

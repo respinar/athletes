@@ -58,15 +58,15 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 		),
 		'operations' => array
 		(
-			'edit' => array
+			'editpage' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['editpage'],
 				'href'                => 'table=tl_content',
 				'icon'                => 'edit.gif'
 			),
-			'editheader' => array
+			'editprofile' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_athlete']['editprofile'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.gif'
 			),

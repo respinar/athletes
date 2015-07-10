@@ -15,7 +15,7 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['athletes'] = array('Athletes', 'Add and manage your Athletes.');
+$GLOBALS['TL_LANG']['MOD']['athletes'] = array('Athletes', 'Add and manage Athletes.');
 
 
 /**
