@@ -259,6 +259,15 @@ $GLOBALS['TL_DCA']['tl_athlete'] = array
 );
 
 class tl_athlete extends Backend {
+	
+	/**
+	 * Import the back end user object
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->import('BackendUser', 'User');
+	}
 
 
 	public function generateActRow($arrRow)
@@ -282,10 +291,10 @@ class tl_athlete extends Backend {
 		}
 
 		// Check permissions AFTER checking the tid, so hacking attempts are logged
-		//if (!$this->User->isAdmin && !$this->User->hasAccess('tl_prices::published', 'alexf'))
-		//{
-		//	return '';
-		//}
+		if (!$this->User->isAdmin && !$this->User->hasAccess('tl_athlete::published', 'alexf'))
+		{
+			return '';
+		}
 
 		$href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
 
@@ -304,14 +313,14 @@ class tl_athlete extends Backend {
 		// Check permissions to edit
 		$this->Input->setGet('id', $intId);
 		$this->Input->setGet('act', 'toggle');
-		//$this->checkPermission();
+		$this->checkPermission();
 
 		// Check permissions to publish
-		//if (!$this->User->isAdmin && !$this->User->hasAccess('tl_news::published', 'alexf'))
-		//{
-		//	$this->log('Not enough permissions to publish/unpublish news item ID "'.$intId.'"', 'tl_news toggleVisibility', TL_ERROR);
-		//	$this->redirect('contao/main.php?act=error');
-		//}
+		if (!$this->User->isAdmin && !$this->User->hasAccess('tl_athlete::published', 'alexf'))
+		{
+			$this->log('Not enough permissions to publish/unpublish athlete item ID "'.$intId.'"', 'tl_athlete toggleVisibility', TL_ERROR);
+			$this->redirect('contao/main.php?act=error');
+		}
 
 		$this->createInitialVersion('tl_athlete', $intId);
 
