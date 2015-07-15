@@ -35,3 +35,10 @@ $GLOBALS['FE_MOD']['athlete']['athlete_detail'] = 'ModuleAthleteDetail';
  * Register hook to add athletes items to the indexer
  */
 $GLOBALS['TL_HOOKS']['getSearchablePages'][]     = array('Athlete', 'getSearchablePages');
+
+
+/**
+ * Add permissions
+ */
+$GLOBALS['TL_PERMISSIONS'][] = 'athletes';
+$GLOBALS['TL_PERMISSIONS'][] = 'athletep';
